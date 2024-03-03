@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react'
+import { createContext, useContext, useEffect, useReducer, useState } from 'react'
 import { CLEAR_CART, REMOVE, INCREASE, DECREASE } from './store/action'
 import cartItems from './data'
 import { reducer } from './store/reducer'
@@ -13,8 +13,15 @@ export const useGlobalContext = () => {
   return useContext(GlobalContext)
 }
 
+
 export function AppContext({ children }) {
   const [state, dispatch] = useReducer(reducer, defaultState)
+  const totalItemsAmount = cartItems.reduce((acc, item) => acc + item.amount, 0)
+  const [totalItems, setTotalItems] = useState(totalItemsAmount)
+
+  useEffect(() => {
+    setTotalItems(totalItemsAmount)
+  }, [totalItemsAmount])
 
   function removeItem(id) {
     dispatch({ type: REMOVE, payload: { id } })
@@ -31,7 +38,7 @@ export function AppContext({ children }) {
     dispatch({ type: DECREASE, payload: { id } })
   }
   return (
-    <GlobalContext.Provider value={{ removeItem, clearCart, increase, decrease, state }}>
+    <GlobalContext.Provider value={{ removeItem, clearCart, increase, decrease, state, totalItems }}>
       {children}
     </GlobalContext.Provider>
   )
