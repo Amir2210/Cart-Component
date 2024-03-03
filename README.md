@@ -36,7 +36,10 @@ The Cart Context component serves as a global context provider for managing stat
 
 
 
-https://github.com/Amir2210/Cart-Component/assets/107459404/0466e5c8-bd8d-4f76-add9-e66ea111356b
+
+
+https://github.com/Amir2210/Cart-Component/assets/107459404/decd9707-7434-42f9-8275-c9ba481b1ccb
+
 
 
 ![ללא שם](https://github.com/Amir2210/Cart-Component/assets/107459404/9b19e702-55bb-4b6f-a827-8d3f5215f272)
