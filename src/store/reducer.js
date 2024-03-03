@@ -6,7 +6,6 @@ export const reducer = (state, action) => {
     return { ...state, cartItems: [] }
   }
   if (action.type === REMOVE) {
-    console.log('state:', state.cartItems)
     let newCartItems = state.cartItems.filter(item => item.id !== action.payload.id)
     return { ...state, cartItems: newCartItems }
   }

@@ -26,6 +26,9 @@ export function AppContext({ children }) {
 
   function removeItem(id) {
     dispatch({ type: REMOVE, payload: { id } })
+    const item = cartItems.find(item => item.id === id)
+    setTotalItems(totalItems - 1)
+    setTotalPrice(totalPrice - item.price * item.amount)
   }
 
   function clearCart() {
