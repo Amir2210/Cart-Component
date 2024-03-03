@@ -18,7 +18,8 @@ export function AppContext({ children }) {
   const [state, dispatch] = useReducer(reducer, defaultState)
   const totalItemsAmount = cartItems.reduce((acc, item) => acc + item.amount, 0)
   const [totalItems, setTotalItems] = useState(totalItemsAmount)
-
+  const getTotalPrice = cartItems.reduce((acc, item) => acc + item.price, 0)
+  const [totalPrice, setTotalPrice] = useState(getTotalPrice)
   useEffect(() => {
     setTotalItems(totalItemsAmount)
   }, [totalItemsAmount])
@@ -33,12 +34,16 @@ export function AppContext({ children }) {
 
   function increase(id) {
     dispatch({ type: INCREASE, payload: { id } })
+    const item = cartItems.find(item => item.id === id)
+    setTotalPrice(totalPrice + item.price)
   }
   function decrease(id) {
     dispatch({ type: DECREASE, payload: { id } })
+    const item = cartItems.find(item => item.id === id)
+    setTotalPrice(totalPrice - item.price)
   }
   return (
-    <GlobalContext.Provider value={{ removeItem, clearCart, increase, decrease, state, totalItems }}>
+    <GlobalContext.Provider value={{ removeItem, clearCart, increase, decrease, state, totalItems, totalPrice }}>
       {children}
     </GlobalContext.Provider>
   )

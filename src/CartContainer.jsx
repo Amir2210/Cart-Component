@@ -1,8 +1,7 @@
 import { useGlobalContext } from './AppContext'
 import CartItem from './CartItem'
 const CartContainer = () => {
-  const { clearCart } = useGlobalContext()
-  const { state } = useGlobalContext()
+  const { clearCart, state, totalPrice } = useGlobalContext()
   if (state.cartItems.length === 0) {
     return (
       <section className='cart'>
@@ -31,7 +30,7 @@ const CartContainer = () => {
         <hr />
         <div>
           <h5 className='cart-total'>
-            total <span>$10</span>
+            total <span>$ {totalPrice.toFixed(2)}</span>
           </h5>
         </div>
         <button
