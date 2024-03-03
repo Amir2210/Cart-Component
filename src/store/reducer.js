@@ -14,6 +14,11 @@ export const reducer = (state, action) => {
   if (action.type === INCREASE) {
     const newItem = state.cartItems.find(item => item.id === action.payload.id)
     newItem.amount++
+    return { ...state, [cartItems]: newItem }
+  }
+  if (action.type === DECREASE) {
+    const newItem = state.cartItems.find(item => item.id === action.payload.id)
+    newItem.amount--
     console.log(newItem)
     return { ...state, [cartItems]: newItem }
   }
