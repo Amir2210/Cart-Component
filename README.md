@@ -33,3 +33,13 @@ The Cart Context component serves as a global context provider for managing stat
 3. Run npm install to install dependencies.
 4. Run npm run dev to start the development server.
 5. Open your browser and navigate to http://localhost:5173 to view the application.
+
+
+
+https://github.com/Amir2210/Cart-Component/assets/107459404/0466e5c8-bd8d-4f76-add9-e66ea111356b
+
+
+![ללא שם](https://github.com/Amir2210/Cart-Component/assets/107459404/9b19e702-55bb-4b6f-a827-8d3f5215f272)
+
+
+
