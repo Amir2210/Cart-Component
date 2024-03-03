@@ -3,7 +3,6 @@ import CartItem from './CartItem'
 const CartContainer = () => {
   const { clearCart } = useGlobalContext()
   const { state } = useGlobalContext()
-
   if (state.cartItems.length === 0) {
     return (
       <section className='cart'>

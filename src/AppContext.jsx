@@ -23,8 +23,12 @@ export function AppContext({ children }) {
   function clearCart() {
     dispatch({ type: CLEAR_CART })
   }
+
+  function increase(id) {
+    dispatch({ type: INCREASE, payload: { id } })
+  }
   return (
-    <GlobalContext.Provider value={{ removeItem, clearCart, state }}>
+    <GlobalContext.Provider value={{ removeItem, clearCart, increase, state }}>
       {children}
     </GlobalContext.Provider>
   )

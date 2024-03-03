@@ -10,6 +10,13 @@ export const reducer = (state, action) => {
     let newCartItems = state.cartItems.filter(item => item.id !== action.payload.id)
     return { ...state, cartItems: newCartItems }
   }
+  // CART ACTIONS
+  if (action.type === INCREASE) {
+    const newItem = state.cartItems.find(item => item.id === action.payload.id)
+    newItem.amount++
+    console.log(newItem)
+    return { ...state, [cartItems]: newItem }
+  }
   throw new Error(`No matching "${action.type}" - action type`);
 }
 
