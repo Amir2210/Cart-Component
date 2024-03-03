@@ -21,8 +21,8 @@ const CartItem = ({ id, img, title, price, amount }) => {
         {/* amount */}
         <span className='amount'>{amount}</span>
         {/* decrease amount */}
-        <button className='amount-btn' onClick={() => decrease(id)}>
-          <FaChevronDown className='amount-icon' />
+        <button disabled={amount === 0 ? true : false} className='amount-btn' onClick={() => decrease(id)}>
+          <FaChevronDown className={amount === 0 ? 'amount-icon-disabled' : 'amount-icon'} />
         </button>
       </div>
     </article>

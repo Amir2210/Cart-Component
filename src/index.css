@@ -10,7 +10,9 @@
 
 html {
   font-size: 100%;
-} /*16px*/
+}
+
+/*16px*/
 
 :root {
   /* colors */
@@ -72,9 +74,11 @@ body {
   line-height: 1;
   color: var(--textColor);
 }
+
 p {
   margin: 0;
 }
+
 h1,
 h2,
 h3,
@@ -88,23 +92,28 @@ h5 {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 5rem); /* Large heading */
+  font-size: clamp(2rem, 5vw, 5rem);
+  /* Large heading */
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 3rem); /* Medium heading */
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  /* Medium heading */
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2.5vw, 2.5rem); /* Small heading */
+  font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+  /* Small heading */
 }
 
 h4 {
-  font-size: clamp(1rem, 2vw, 2rem); /* Extra small heading */
+  font-size: clamp(1rem, 2vw, 2rem);
+  /* Extra small heading */
 }
 
 h5 {
-  font-size: clamp(0.875rem, 1.5vw, 1.5rem); /* Tiny heading */
+  font-size: clamp(0.875rem, 1.5vw, 1.5rem);
+  /* Tiny heading */
 }
 
 .text {
@@ -120,6 +129,7 @@ small,
 a {
   text-decoration: none;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -130,6 +140,7 @@ ul {
   display: block;
   object-fit: cover;
 }
+
 /* buttons */
 
 .btn {
@@ -145,18 +156,22 @@ ul {
   text-transform: capitalize;
   display: inline-block;
 }
+
 .btn:hover {
   background: var(--primary-700);
   box-shadow: var(--shadow-3);
 }
+
 .btn-hipster {
   color: var(--primary-500);
   background: var(--primary-200);
 }
+
 .btn-hipster:hover {
   color: var(--primary-200);
   background: var(--primary-700);
 }
+
 .btn-block {
   width: 100%;
 }
@@ -173,10 +188,12 @@ ul {
   color: var(--red-dark);
   background: var(--red-light);
 }
+
 .alert-success {
   color: var(--green-dark);
   background: var(--green-light);
 }
+
 /* form */
 
 .form {
@@ -188,6 +205,7 @@ ul {
   padding: 2rem 2.5rem;
   margin: 3rem auto;
 }
+
 .form-label {
   display: block;
   font-size: var(--small-text);
@@ -195,6 +213,7 @@ ul {
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
 }
+
 .form-input,
 .form-textarea {
   width: 100%;
@@ -211,15 +230,18 @@ ul {
 .form-textarea {
   height: 7rem;
 }
+
 ::placeholder {
   font-family: inherit;
   color: var(--grey-400);
 }
+
 .form-alert {
   color: var(--red-dark);
   letter-spacing: var(--letterSpacing);
   text-transform: capitalize;
 }
+
 /* alert */
 
 @keyframes spinner {
@@ -251,6 +273,7 @@ ul {
   margin: 0 auto;
   margin-top: 1rem;
 }
+
 /* ============= PROJECT CSS =============== */
 
 /*
@@ -266,6 +289,7 @@ nav {
   justify-content: center;
   align-items: center;
 }
+
 .nav-center {
   width: var(--view-width);
   max-width: var(--fixed-width);
@@ -273,17 +297,21 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+
 nav h4 {
   color: var(--white);
 }
+
 .nav-container {
   display: block;
   position: relative;
 }
+
 .cart-icon {
   font-size: 2.25rem;
   color: var(--white);
 }
+
 .amount-container {
   position: absolute;
   top: -0.85rem;
@@ -296,10 +324,12 @@ nav h4 {
   align-items: center;
   justify-content: center;
 }
+
 .total-amount {
   color: var(--white);
   font-size: 1.25rem;
 }
+
 /*
 =============== 
 Cart
@@ -313,33 +343,39 @@ Cart
   margin-top: 40px;
   padding: 2.5rem 0;
 }
+
 .cart h2 {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 3rem;
 }
+
 .empty-cart {
   text-transform: lowercase;
   color: var(--grey-500);
   margin-top: 1rem;
   text-align: center;
 }
+
 hr {
   background: var(--grey-300);
   border-color: transparent;
   margin-bottom: 1rem;
   border-width: 1px;
 }
+
 .cart footer {
   margin-top: 5rem;
   text-align: center;
 }
+
 .cart-total {
   text-transform: capitalize;
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
+
 .cart-total span {
   background: var(--primary-500);
   display: inline-block;
@@ -347,6 +383,7 @@ hr {
   border-radius: var(--borderRadius);
   color: var(--white);
 }
+
 /*
 =============== 
 Cart Item
@@ -365,6 +402,7 @@ Cart Item
   height: 5rem;
   object-fit: cover;
 }
+
 .cart-item h5 {
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -376,6 +414,7 @@ Cart Item
   color: var(--grey-500);
   display: block;
 }
+
 .remove-btn {
   color: var(--primary-500);
   letter-spacing: var(--letterSpacing);
@@ -386,23 +425,32 @@ Cart Item
   margin-top: 0.375rem;
   transition: var(--transition);
 }
+
 .remove-btn:hover {
   color: var(--primary-600);
 }
+
 .amount-btn {
   width: 1.5rem;
   background: transparent;
   border-color: transparent;
   cursor: pointer;
 }
+
 .amount-icon {
   font-size: 1.25rem;
   color: var(--primary-500);
   transition: var(--transition);
 }
+
+.amount-icon-disabled {
+  color: var(--primary-200);
+}
+
 .amount-icon:hover {
   color: var(--primary-700);
 }
+
 .amount {
   font-size: 1.25rem;
   display: block;
