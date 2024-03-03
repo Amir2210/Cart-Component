@@ -16,18 +16,22 @@ export const useGlobalContext = () => {
 
 export function AppContext({ children }) {
   const [state, dispatch] = useReducer(reducer, defaultState)
-  const totalItemsAmount = cartItems.reduce((acc, item) => acc + item.amount, 0)
-  const [totalItems, setTotalItems] = useState(totalItemsAmount)
-  const getTotalPrice = cartItems.reduce((acc, item) => acc + item.price, 0)
-  const [totalPrice, setTotalPrice] = useState(getTotalPrice)
+  const [totalItems, setTotalItems] = useState(0)
+  const [totalPrice, setTotalPrice] = useState(0)
+
+
   useEffect(() => {
+    const totalItemsAmount = state.cartItems.reduce((acc, item) => acc + item.amount, 0)
+    const getTotalPrice = state.cartItems.reduce((acc, item) => acc + item.price * item.amount, 0)
+
     setTotalItems(totalItemsAmount)
-  }, [totalItemsAmount])
+    setTotalPrice(getTotalPrice)
+  }, [state.cartItems])
 
   function removeItem(id) {
     dispatch({ type: REMOVE, payload: { id } })
     const item = cartItems.find(item => item.id === id)
-    setTotalItems(totalItems - 1)
+    setTotalItems(totalItems - item.amount)
     setTotalPrice(totalPrice - item.price * item.amount)
   }
 
@@ -38,11 +42,13 @@ export function AppContext({ children }) {
   function increase(id) {
     dispatch({ type: INCREASE, payload: { id } })
     const item = cartItems.find(item => item.id === id)
+    setTotalItems(totalItems + 1)
     setTotalPrice(totalPrice + item.price)
   }
   function decrease(id) {
     dispatch({ type: DECREASE, payload: { id } })
     const item = cartItems.find(item => item.id === id)
+    setTotalItems(totalItems - 1)
     setTotalPrice(totalPrice - item.price)
   }
   return (
